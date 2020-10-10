@@ -1,0 +1,70 @@
+{
+  "parser": "babel-eslint",
+  "root": true,
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true,
+    "mocha": true
+  },
+  "globals": {
+    "wrapStore": true
+  },
+  "plugins": [
+    "@typescript-eslint",
+    "jsx-a11y",
+    "jsdoc",
+    "mocha",
+    "chai-expect",
+    "sonarjs",
+    "unicorn"
+  ],
+  "extends": [
+    "airbnb-base",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:jsdoc/recommended",
+    "plugin:compat/recommended",
+    "plugin:mocha/recommended",
+    "plugin:chai-expect/recommended",
+    "plugin:sonarjs/recommended",
+    "plugin:unicorn/recommended"
+  ],
+  "rules": {
+    "indent": [
+      "error",
+      4,
+      {
+        "SwitchCase": 1
+      }
+    ],
+    "comma-dangle": [
+      "error",
+      "never"
+    ],
+    "unicorn/filename-case": [
+      "error",
+      {
+        "cases": {
+          "camelCase": true,
+          "pascalCase": true
+        }
+      }
+    ],
+    // git fixes this issue by automaticly change the brakeline type when pushing
+    "linebreak-style": "off",
+    "object-curly-spacing": "off",
+    "import/extensions": "off",
+    "import/no-unresolved": "off"
+  },
+  "overrides": [
+    {
+      "files": "**/test*.js",
+      "rules": {
+        "node/no-unpublished-require": "off",
+        "node/no-missing-require": "off"
+      }
+    }
+  ]
+}

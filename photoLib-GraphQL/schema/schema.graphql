@@ -1,0 +1,15 @@
+type Photo @entity {
+    id: String @id
+    name: String @column
+    date: String @column
+    camara: Camera @column
+}
+
+type Camera  @entity {
+    id: String @id
+    name: String @column
+}
+
+type Query {
+    photos: [Photo]
+}
